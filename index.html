@@ -7,11 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <title>Listmon</title>
+    <title>List Master 7000</title>
 </head>
 
-<body>
-
+<body class="text-white">
+    <header class="text-center container-fluid bg-dark h-45">
+        <div class="row h-100 align-items-center justify-content-center">
+          <h1 class="col-12">List Master 7000</h1>
+        </div>
+      </header>
+<div class="container-fluid h-25 bg-dark">
+    <form class="col-3" id="listForm" onsubmit="app.listController.addList(event)">
+        <label for="name" class="col-sm-1-12 col-form-label"><h1>List Title</h1></label> <br>
+        <input type="text" class="form-control" name="name" id="name" placeholder="List Name">
+        <button type="submit" class="btn btn-primary">
+          submit
+        </button>
+      </form>
+</div>
+<main  class="container-fluid h-45 bg-dark">
+<div class="row h-25 bg-dark">
+    <div id="listArea" class="col text-white"></div>
+</div>
+</main >
 
     <script src="app/main.js" type="module"></script>
 </body>
