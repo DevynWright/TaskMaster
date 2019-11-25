@@ -20,7 +20,7 @@ export default class List {
             type="text" 
             class="form-control d-inline-block" 
             name="name"
-            id="name" 
+            id="taskSpace" 
             placeholder="Enter Task Name...">
             <button type="submit" class="btn btn-primary btn-block">Add Task</button>
             <button type="button" class="btn btn-danger btn-block" onclick="app.listController.deleteList('${

@@ -1,4 +1,12 @@
-
+#listName {
+    margin-top: 13px;
+}
+#listButton {
+    margin-bottom: 13px;
+}
+#taskSpace {
+    margin-bottom: 8px;
+}
 main {
     height: 25vh;
 }
