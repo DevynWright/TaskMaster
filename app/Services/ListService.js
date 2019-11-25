@@ -14,24 +14,24 @@ class ListService {
   }
   addTask(newTask) {
     let freshTask = new Task(newTask);
-    let foundList = store.State.lists.find(list => list.Id == freshTask.listId);
-    foundList.tasks.push(freshTask);
+    let foundList = store.State.lists.find(list => list.id == freshTask.listId);
+    foundList.tasks.push(freshTask)
     store.saveState();
   }
+  deleteList(listId) {
+    if(confirm("Are you sure you want to delete?")) {
+    store.State.lists = store.State.lists.filter(list => list.id != listId);
+    } else return;
+  }
   deleteTask(listId, taskId) {
-    let foundList = _store.State.lists.find(
+    let foundList = store.State.lists.find(
       list => list.id == listId
       );
       foundList.tasks = foundList.tasks.filter(
         task => task.id != taskId
         );
-        _store.saveState();
+        store.saveState();
       }
-  deleteList(listId) {
-    let foundList = _store.State.lists.findIndex(list => list.id == listId)
-     foundList.tasks = foundList.tasks.filter(task => task.id != taskId);
-     store.saveState();
-  }
 }
 const LISTSERVICE = new ListService();
 export default LISTSERVICE;

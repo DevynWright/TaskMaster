@@ -1,11 +1,12 @@
 import ListService from "../Services/ListService.js";
 import _store from "../store.js";
+import store from "../store.js";
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
+  console.log("we made it to try and draw")
   let template = "";
-  let lists = _store.Lists;
-  lists.forEach(list => (template += list.template));
+  store.Lists.forEach(list => (template += list.template));
   document.querySelector("#listArea").innerHTML = template;
 }
 
@@ -22,9 +23,7 @@ export default class ListController {
       let form = event.target;
 
     let listData = {
-      id: "",
       name: form.name.value,
-      tasks: []
     };
 
     ListService.addList(listData);
@@ -46,7 +45,7 @@ export default class ListController {
   }
   deleteList(listId) {
    ListService.deleteList(listId);
-    _drawLists()
+    _drawLists();
   }
   deleteTask(listId, taskId) {
     ListService.deleteTask(listId, taskId);

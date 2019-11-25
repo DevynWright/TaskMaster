@@ -7,9 +7,10 @@ export default class Task {
         this.listId = listId;
     }
 
-    get Template() {
-        return `
-        <li>${this.name}</li><button class="btn btn-danger" onclick="app.listController.deleteTask('${this.listId}','${this.Id}')">Remove</button>
+    get Template1() {
+        return /*html*/ `
+        <dt>${this.name}
+        <button class="btn btn-danger" onclick="app.listController.deleteTask(listId, taskId)">Remove</button></dt>
         `;
     }
 }
