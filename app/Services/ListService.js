@@ -22,6 +22,7 @@ class ListService {
     if(confirm("Are you sure you want to delete?")) {
     store.State.lists = store.State.lists.filter(list => list.id != listId);
     } else return;
+    store.saveState()
   }
   deleteTask(listId, taskId) {
     if(confirm("Are you sure you want to delete?")){
