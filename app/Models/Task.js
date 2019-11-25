@@ -10,7 +10,7 @@ export default class Task {
     get Template1() {
         return /*html*/ `
         <dt>${this.name}
-        <button class="btn btn-danger" onclick="app.listController.deleteTask(listId, taskId)">Remove</button></dt>
+        <button class="btn btn-danger" onclick="app.listController.deleteTask('${this.listId}','${this.id}')">X</button></dt>
         `;
     }
 }

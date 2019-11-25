@@ -24,6 +24,7 @@ class ListService {
     } else return;
   }
   deleteTask(listId, taskId) {
+    if(confirm("Are you sure you want to delete?")){
     let foundList = store.State.lists.find(
       list => list.id == listId
       );
@@ -31,7 +32,8 @@ class ListService {
         task => task.id != taskId
         );
         store.saveState();
-      }
+      } else return;
+    }  
 }
 const LISTSERVICE = new ListService();
 export default LISTSERVICE;
